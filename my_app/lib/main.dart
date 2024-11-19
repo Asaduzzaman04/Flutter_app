@@ -10,17 +10,29 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blue, // Set the background color to blue
+          centerTitle: true, // Center the title text
+          title: Text(
+            "Home Page",
+            style: TextStyle(
+              color: Colors.white, // Set the text color to white
+            ),
+          ),
+        ),
         body: Center(
-          // Center widget to align content both horizontally and vertically
-          child: Padding(
-            padding: EdgeInsets.all(30.0), // Adds 30 pixels of padding on all sides
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0), // Add padding for x and y axes
+            decoration: BoxDecoration(
+              color: Colors.black, // Background color of the text container
+              borderRadius: BorderRadius.circular(8.0), // Small border radius
+            ),
             child: Text(
               "I am developed by Flutter",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 28.0,
-                color: Color.fromRGBO(255, 255, 255, 1), // White text color
-                backgroundColor: Color.fromRGBO(11, 1, 1, 1), // Dark background color
+                fontSize: 24.0, // Adjusted font size
+                color: Colors.white, // Text color set to white
               ),
             ),
           ),
