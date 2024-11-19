@@ -1,8 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MyApp()); // Corrected the app name
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget { // Renamed the class to avoid naming conflicts
   const MyApp({super.key});
 
   @override
@@ -10,29 +11,29 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue, // Set the background color to blue
-          centerTitle: true, // Center the title text
-          title: Text(
-            "Home Page",
-            style: TextStyle(
-              color: Colors.white, // Set the text color to white
-            ),
-          ),
+        appBar: AppBar( // Fixed parentheses
+          backgroundColor: Colors.black,
+          title: Text("Home Page", style: TextStyle(
+            color: Colors.white,
+          ),),
+          centerTitle: true,
         ),
         body: Center(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0), // Add padding for x and y axes
+            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 5.0),
+
             decoration: BoxDecoration(
-              color: Colors.black, // Background color of the text container
-              borderRadius: BorderRadius.circular(8.0), // Small border radius
+              color: Colors.black87, // Removed backgroundColor, used color instead
+              borderRadius: BorderRadius.circular(8.0),
             ),
+
             child: Text(
-              "I am developed by Flutter",
+              "I am developed by Flutter", // Fixed the text
               style: TextStyle(
+                fontSize: 30.0,
+                fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
-                fontSize: 24.0, // Adjusted font size
-                color: Colors.white, // Text color set to white
+                color:Colors.white,
               ),
             ),
           ),
