@@ -1,10 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final _textController = TextEditingController(); // Create a TextEditingController
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +19,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
-          title: Text(
+          title: const Text(
             "Home Page",
             style: TextStyle(
               color: Colors.white,
@@ -23,7 +29,8 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 5.0),
+            padding:
+            const EdgeInsets.symmetric(horizontal: 16.0, vertical: 5.0),
             decoration: BoxDecoration(
               color: Colors.black87,
               borderRadius: BorderRadius.circular(8.0),
@@ -32,13 +39,14 @@ class MyApp extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 IconButton(
-                  icon: Icon(Icons.ac_unit_outlined, color: Colors.white),
+                  icon: const Icon(Icons.ac_unit_outlined, color: Colors.white),
                   onPressed: () {
                     print("hello world");
                   },
                 ),
-                SizedBox(height: 10), // Add some space between the icon and text
-                Text(
+                const SizedBox(
+                    height: 10), // Add some space between the icon and text
+                const Text(
                   "I am developed by Flutter",
                   style: TextStyle(
                     fontSize: 30.0,
@@ -46,6 +54,29 @@ class MyApp extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
+                ),
+                const SizedBox(
+                    height: 20), // Add space between text and TextField
+                TextField(
+                  controller: _textController, // Assign the controller
+                  decoration: InputDecoration(
+                    labelText: 'Enter something',
+                    labelStyle: TextStyle(color: Colors.white),
+                    filled: true,
+                    fillColor: Colors.white.withOpacity(0.2),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
+                  style: TextStyle(color: Colors.white),
+                ),
+                ElevatedButton( // Add a button to retrieve the value
+                  onPressed: () {
+                    final String enteredText = _textController.text; // Get the text
+                    print("The user entered: $enteredText");
+                  },
+                  child: const Text('Get Input'),
                 ),
               ],
             ),
