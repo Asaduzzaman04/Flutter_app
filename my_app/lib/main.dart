@@ -53,6 +53,7 @@ class _MyAppState extends State<MyApp> {
                     fontStyle: FontStyle.italic,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
+                    fontFamily: "poppins"
                   ),
                 ),
                 const SizedBox(
@@ -61,7 +62,7 @@ class _MyAppState extends State<MyApp> {
                   controller: _textController, // Assign the controller
                   decoration: InputDecoration(
                     labelText: 'Enter something',
-                    labelStyle: TextStyle(color: Colors.white),
+                    labelStyle: const TextStyle(color: Colors.white),
                     filled: true,
                     fillColor: Colors.white.withOpacity(0.2),
                     border: OutlineInputBorder(
@@ -69,7 +70,7 @@ class _MyAppState extends State<MyApp> {
                       borderSide: BorderSide.none,
                     ),
                   ),
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 ElevatedButton( // Add a button to retrieve the value
                   onPressed: () {
