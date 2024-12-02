@@ -16,7 +16,7 @@ AppBar buildAppBar() {
           width: 50,
           child: ClipRRect(
             borderRadius:
-                BorderRadius.circular(5), // Apply same radius to all corners
+                BorderRadius.circular(25), // Apply same radius to all corners
             child: Image.asset(
               "asstes/images/killerHasina.jpg",
               fit: BoxFit.cover,
