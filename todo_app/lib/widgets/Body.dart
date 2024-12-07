@@ -44,7 +44,7 @@ class _TodoBodyState extends State<bodyWidget> {
         Container(
           padding: EdgeInsets.all(20),
           child: Text(
-            " Hasina's Todo",
+            "Hasina's Todo",
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 33,
@@ -74,6 +74,7 @@ class _TodoBodyState extends State<bodyWidget> {
                 child: TextField(
                   controller: _todoController,
                   decoration: InputDecoration(
+
                     hintText: 'Add a new task',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
