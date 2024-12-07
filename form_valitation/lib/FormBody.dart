@@ -86,8 +86,7 @@ class _FormBodyState extends State<FormBody> {
               labelTextdata: "your email",
               validHintTextdata: "email is required",
               customValidator: (value) {
-                if (!RegExp(r'^[a-zA-Z0-9._%+-]+@gmail\.com$')
-                    .hasMatch(value!)) {
+                if (!RegExp(r'[a-z0-9]+@gmail\.com$').hasMatch(value!)) {
                   return "Please enter a valid @gmail.com email";
                 }
                 return null;
@@ -107,13 +106,8 @@ class _FormBodyState extends State<FormBody> {
                 customValidator: (value) {
                   if (value!.length < 6) {
                     return "Password must be at least 6 characters";
-                  } else if (!RegExp(
-                          r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$')
-                      .hasMatch(value)) {
+                  } else if (!RegExp(r'[A-Za-z0-9]$').hasMatch(value)) {
                     return "Password must include letters and numbers";
-                  } else if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]')
-                      .hasMatch(value)) {
-                    return "Password must contain at least one special character";
                   } else {
                     return null; // Valid password
                   }
