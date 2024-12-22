@@ -8,11 +8,11 @@ class TodoItems extends StatefulWidget {
   final Function(ToDo)? onDelete; // Optional callback for deleting a task
 
   const TodoItems({
-    Key? key,
+    super.key,
     required this.todo,
     this.onToggle, // Optional external control for toggle
     this.onDelete, // Optional external control for delete
-  }) : super(key: key);
+  });
 
   @override
   State<TodoItems> createState() => _TodoItemsState();
@@ -47,9 +47,9 @@ class _TodoItemsState extends State<TodoItems> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 7),
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 7),
       child: ListTile(
-        contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         onTap: _toggleTodo, // Use internal toggle method on tap
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
@@ -77,7 +77,7 @@ class _TodoItemsState extends State<TodoItems> {
           ),
           child: IconButton(
             onPressed: _deleteTodo, // Call delete function on press
-            icon: Icon(Icons.delete),
+            icon: const Icon(Icons.delete),
             color: Colors.white,
           ),
         ),

@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
 class FancyAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const FancyAppBar({super.key});
+
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.blueAccent,
       leading: IconButton(
-        icon: Icon(Icons.arrow_back, color: Colors.white),
+        icon: const Icon(Icons.arrow_back, color: Colors.white),
         onPressed: () {
           Navigator.pop(context); // Handle back button
         },
       ),
-      title: Text(
+      title: const Text(
         "Form Validation",
         style: TextStyle(
           fontSize: 20,
@@ -31,6 +33,8 @@ class FancyAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class ProfileActionButton extends StatefulWidget {
+  const ProfileActionButton({super.key});
+
   @override
   _ProfileActionButtonState createState() => _ProfileActionButtonState();
 }
@@ -45,7 +49,7 @@ class _ProfileActionButtonState extends State<ProfileActionButton>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
     );
 
     _scaleAnimation = Tween<double>(begin: 1.0, end: 1.2).animate(
@@ -64,7 +68,7 @@ class _ProfileActionButtonState extends State<ProfileActionButton>
     return ScaleTransition(
       scale: _scaleAnimation,
       child: IconButton(
-        icon: CircleAvatar(
+        icon: const CircleAvatar(
           backgroundImage: NetworkImage(
             'https://e7.pngegg.com/pngimages/778/849/png-clipart-computer-icons-user-login-avatar-small-icons-angle-heroes.png', // Replace with actual image
           ),

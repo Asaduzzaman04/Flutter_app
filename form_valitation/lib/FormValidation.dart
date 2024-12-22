@@ -14,7 +14,7 @@ class _FormValidationState extends State<FormValidation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:FancyAppBar() ,
-      body: FormBody() ,
+      body: const FormBody() ,
     );
   }
 }

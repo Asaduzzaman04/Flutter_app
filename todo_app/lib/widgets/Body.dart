@@ -4,6 +4,8 @@ import 'package:todo_app/constants/colors.dart';
 import 'package:todo_app/widgets/todo_item.dart';
 
 class bodyWidget extends StatefulWidget {
+  const bodyWidget({super.key});
+
   @override
   _TodoBodyState createState() => _TodoBodyState();
 }
@@ -42,8 +44,8 @@ class _TodoBodyState extends State<bodyWidget> {
       children: [
         // Title
         Container(
-          padding: EdgeInsets.all(20),
-          child: Text(
+          padding: const EdgeInsets.all(20),
+          child: const Text(
             "Hasina's Todo",
             style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -82,20 +84,20 @@ class _TodoBodyState extends State<bodyWidget> {
                   ),
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               // Add Button
               ElevatedButton(
                 onPressed: () {
                   _addNewTask(_todoController.text);
                 },
-                child: Icon(Icons.add, size: 30, color: Colors.white),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: tdBlue,
-                  minimumSize: Size(60, 60),
+                  minimumSize: const Size(60, 60),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
+                child: Icon(Icons.add, size: 30, color: Colors.white),
               ),
             ],
           ),

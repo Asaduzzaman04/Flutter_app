@@ -9,9 +9,9 @@ AppBar buildAppBar() {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         // AppBar icon
-        Icon(Icons.menu, color: tdBlack, size: 40),
+        const Icon(Icons.menu, color: tdBlack, size: 40),
         // User profile with rounded image
-        Container(
+        SizedBox(
           height: 50,
           width: 50,
           child: ClipRRect(

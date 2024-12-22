@@ -92,7 +92,7 @@ class _FormBodyState extends State<FormBody> {
                 return null;
               },
             ),
-            Customform(
+            const Customform(
               obscureText: false,
               hintTextdata: '018XXXXXXXX',
               labelTextdata: "Phone Number",
@@ -112,19 +112,19 @@ class _FormBodyState extends State<FormBody> {
                     return null; // Valid password
                   }
                 }),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Container(
               child: ElevatedButton(
                 onPressed: _hanldeFormData,
-                child: Text(
-                  "submit",
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
+                ),
+                child: Text(
+                  "submit",
+                  style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
               ),
             )

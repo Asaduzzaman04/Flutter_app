@@ -8,7 +8,7 @@ class Screen02 extends StatelessWidget {
   Widget build(BuildContext context) {
     
     return Scaffold(
-      appBar: _appBar(),
+      appBar: const _appBar(),
       body:Column(
         children: [
           Text(titleText,style: const TextStyle(fontSize: 50.0),),
@@ -22,10 +22,10 @@ class Screen02 extends StatelessWidget {
   }
 }
 class _appBar extends StatelessWidget implements PreferredSizeWidget {
-  const _appBar({super.key});
+  const _appBar();
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +35,9 @@ class _appBar extends StatelessWidget implements PreferredSizeWidget {
       leading: IconButton(
           onPressed: () {}, icon: const Icon(Icons.arrow_circle_left)),
       centerTitle: true,
-      title: Text("hello world"),
+      title: const Text("hello world"),
       actions: [
-        ElevatedButton(onPressed: () {}, child:  Icon(Icons.account_box_rounded))
+        ElevatedButton(onPressed: () {}, child:  const Icon(Icons.account_box_rounded))
       ],
     );
   }
