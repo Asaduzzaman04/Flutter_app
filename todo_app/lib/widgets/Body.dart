@@ -46,7 +46,7 @@ class _TodoBodyState extends State<bodyWidget> {
         Container(
           padding: const EdgeInsets.all(20),
           child: const Text(
-            "Hasina's Todo",
+            "Todo",
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 33,
